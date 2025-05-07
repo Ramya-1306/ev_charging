@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <script src="../static/script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        select, input, button {
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #reservation_message {
+            color: green;
+        }
+
+        #mileage_result {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Reserve Charging Slot</h2>
+        
+        <label for="station_id">Select Station:</label>
+        <select id="station_id">
+            <option value="Station 1">Station 1 - City Center</option>
+            <option value="Station 2">Station 2 - Airport Road</option>
+            <option value="Station 3">Station 3 - Tech Park</option>
+        </select>
+
+        <label for="slot_number">Select Slot:</label>
+        <select id="slot_number">
+            <option value="1">Slot 1</option>
+            <option value="2">Slot 2</option>
+            <option value="3">Slot 3</option>
+            <option value="4">Slot 4</option>
+            <option value="5">Slot 5</option>
+        </select>
+
+        <label for="date">Select Date:</label>
+        <input type="date" id="date">
+
+        <label for="time">Select Time:</label>
+        <input type="time" id="time">
+
+        <button onclick="reserveSlot()">Reserve</button>
+        <p id="reservation_message"></p>
+
+        <h2>Predict Mileage</h2>
+        <input type="number" id="odometer" placeholder="Odometer Reading">
+        <input type="number" id="battery_health" placeholder="Battery Health">
+        <button onclick="predictMileage()">Predict</button>
+        <p id="mileage_result"></p>
+    </div>
+</body>
+</html>
